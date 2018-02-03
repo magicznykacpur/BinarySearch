@@ -3,17 +3,15 @@ package com.codecool.binarysearch;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.Random;
 
 public class BinarySearch {
 
-    public Integer binarySearch(List<Integer> list, Integer value) {
+    public boolean binarySearch(List<Integer> list, Integer value) {
+        boolean contains = false;
 
         Collections.sort(list);
         int upperBound = list.size();
         int lowerBound = 0;
-
-        Integer toReturn = null;
 
         while (true) {
 
@@ -28,11 +26,11 @@ public class BinarySearch {
             if (list.get(midPoint).equals(value)) {
                 System.out.println("Found the value you were looking for.\n" +
                         "It's " + list.get(midPoint) + " isn't it?");
-                toReturn = list.get(midPoint);
+                contains = true;
                 break;
             }
         }
-        return toReturn;
+        return contains;
     }
 
     public List<Integer> createAList() {
