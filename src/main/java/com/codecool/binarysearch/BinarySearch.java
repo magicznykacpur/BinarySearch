@@ -20,16 +20,18 @@ public class BinarySearch {
             if (list.get(midPoint) < value)
                 lowerBound = midPoint + 1;
 
-            if (list.get(midPoint) > value)
+            else if (list.get(midPoint) > value)
                 upperBound = midPoint - 1;
 
-            if (list.get(midPoint).equals(value)) {
-                System.out.println("Found the value you were looking for.\n" +
-                        "It's " + list.get(midPoint) + " isn't it?");
+            else if (list.get(midPoint).equals(value)) {
                 contains = true;
                 break;
             }
+
+            else
+                break;
         }
+
         return contains;
     }
 
@@ -49,7 +51,7 @@ public class BinarySearch {
 
         List<Integer> list = bs.createAList();
 
-        bs.binarySearch(list, 6);
+        System.out.println(bs.binarySearch(list, 10));
     }
 
 }
